@@ -1,4 +1,5 @@
 import StudentAttendence from "../../Models/Attendence_model/Student-Attendence.js";
+import moment from "moment/moment.js";
 
 const weekday = [
   "Sunday",
@@ -10,8 +11,9 @@ const weekday = [
   "Saturday",
 ];
 const d = new Date();
+var date = moment();
 let day = weekday[d.getDay()];
-let date = date.format("D/MM/YYYY");
+let currentDate = date.format('D/MM/YYYY');
 let time = d.toLocaleTimeString();
 let dayType = "holiday";
 if (day == "Sunday") {
@@ -30,13 +32,14 @@ export const giveattendence = async (req, res, next) => {
       department: req.user.department,
       TeacherUserId: req.body.TeacherUserId,
       TeacherUuid: req.body.TeacherUuid,
+      firstname: req.user.firstname,
+      lastname: req.user.lastname,
       day: day,
-      date: date,
+      date: currentDate,
       time: time,
       attendence: true,
       dayType: dayType,
     };
-    console.log(newdata);
     const newAttendence = new StudentAttendence({ ...newdata });
     await newAttendence.save();
     res.status(200).send("Your Attendence is registered Successfully");

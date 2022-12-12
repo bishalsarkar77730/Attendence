@@ -35,7 +35,7 @@ const CollageSchema = new mongoose.Schema(
     },
     department: {
       type: String,
-      enum: ["BSC(CS)", "plane(Bsc)", "Biotechnology", "BCA", "BA", "Bcom"],
+      enum: ["BSC(CS)", "plane(Bsc)", "Biotechnology", "BCA", "BA", "Bcom", "collageStaff"],
     },
     password: {
       type: String,

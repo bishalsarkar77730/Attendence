@@ -94,6 +94,8 @@ export const signin = async (req, res, next) => {
         id: user._id,
         uuid: user.UuId,
         department: user.department,
+        firstname: user.firstname,
+        lastname: user.lastname,
         role: user.role,
         verified: user.verified,
       },

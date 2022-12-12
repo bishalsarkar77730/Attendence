@@ -1,0 +1,752 @@
+{
+	"info": {
+		"_postman_id": "eb59486d-1514-417b-a310-bc8b0bf4bd99",
+		"name": "Attendence_System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16776292"
+	},
+	"item": [
+		{
+			"name": "Auths",
+			"item": [
+				{
+					"name": "Collage_Auths",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"Meghavi77730\",\r\n    \"firstname\":\"Meghavi\",\r\n    \"lastname\":\"Bansod\",\r\n    \"address\":\"Durg\",\r\n    \"email\":\"meghavibansod@gmail.com\",\r\n    \"number\":\"6267512533\",\r\n    \"department\": \"BCA\",\r\n    \"password\":\"Bishal77730@\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/collageauth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"collageauth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"Meghavi77730\",\r\n    \"password\":\"Bishal77730@\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/collageauth/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"collageauth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LogOut",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/collageauth/signout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"collageauth",
+										"signout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Students_Auths",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"Rohini77730\",\r\n    \"firstname\":\"Rohini\",\r\n    \"lastname\":\"Sahu\",\r\n    \"address\":\"Jamul\",\r\n    \"email\":\"rohinisahu@gmail.com\",\r\n    \"number\":\"6266760839\",\r\n    \"password\":\"Bishal77730@\",\r\n    \"department\":\"Bcom\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/studentauth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"studentauth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"Saurabh77730\",\r\n    \"password\":\"Bishal77730@\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/studentauth/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"studentauth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LogOut",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/studentauth/signout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"studentauth",
+										"signout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cruds",
+			"item": [
+				{
+					"name": "Collage",
+					"item": [
+						{
+							"name": "Collage_User",
+							"item": [
+								{
+									"name": "Get_your_Self",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/user/63915680b59b9fb9fbe70c34",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"63915680b59b9fb9fbe70c34"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete_Your_Self",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/user/63915680b59b9fb9fbe70c34",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"63915680b59b9fb9fbe70c34"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Edit_Your_Self",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"firstname\":\"Bishal\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3001/api/user/63915680b59b9fb9fbe70c34",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"63915680b59b9fb9fbe70c34"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Admin_privelages",
+							"item": [
+								{
+									"name": "Get_User_By_UUID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/user/admin/singleuser/642NPU",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"admin",
+												"singleuser",
+												"642NPU"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Verify_User",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/user/admin/verifyuser/642NPU",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"admin",
+												"verifyuser",
+												"642NPU"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Edit_User_Role",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"role\":\"teacher\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3001/api/user/admin/642NPU",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"admin",
+												"642NPU"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get_ALL_Users",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/user/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Admin_&_Teacher_previlages",
+							"item": [
+								{
+									"name": "Get_Student_By_UUID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/user/collage/student/CneE6i",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"collage",
+												"student",
+												"CneE6i"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Verify_Student",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/user/collage/verifystudent/CneE6i",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"collage",
+												"verifystudent",
+												"CneE6i"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get_All_Students",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/user/allstudents",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"allstudents"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Students",
+					"item": [
+						{
+							"name": "Get_YourSelf",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/student/639157b8b59b9fb9fbe70c3c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"student",
+										"639157b8b59b9fb9fbe70c3c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_YourSelf",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/student/639157b8b59b9fb9fbe70c3c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"student",
+										"639157b8b59b9fb9fbe70c3c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit_yourSelf",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstname\":\"Saurabh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/student/639157b8b59b9fb9fbe70c3c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"student",
+										"639157b8b59b9fb9fbe70c3c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Attendence",
+			"item": [
+				{
+					"name": "Collage",
+					"item": [
+						{
+							"name": "Admin prevelages",
+							"item": [
+								{
+									"name": "get-All-Attendence",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/collage/getallAttendence",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"collage",
+												"getallAttendence"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get-all-user Attendence",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/collage/single/User/attendence/8VnmDe",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"collage",
+												"single",
+												"User",
+												"attendence",
+												"8VnmDe"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Collage_Attendence",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/collage/attendence",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"collage",
+										"attendence"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User_Own_attendence",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/collage/userAttendence/6396cf2d3ba9fcc107baee28",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"collage",
+										"userAttendence",
+										"6396cf2d3ba9fcc107baee28"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Students",
+					"item": [
+						{
+							"name": "Admin prevlages",
+							"item": [
+								{
+									"name": "Get All Student Attendence",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/collage/AllStudent/attendence",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"collage",
+												"AllStudent",
+												"attendence"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Admin & Teacher prevlages",
+							"item": [
+								{
+									"name": "Get single student By UuId",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/collage/single/Student/Allattendence/GiPpcG",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"collage",
+												"single",
+												"Student",
+												"Allattendence",
+												"GiPpcG"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Attendence",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"TeacherUserId\":\"6396d0c33ba9fcc107baee34\",\r\n    \"TeacherUuid\":\"8VnmDe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/student/giveattendence",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"student",
+										"giveattendence"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get-Your Attendence",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/student//getallyourAttendence/6396cff93ba9fcc107baee2c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"student",
+										"",
+										"getallyourAttendence",
+										"6396cff93ba9fcc107baee2c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

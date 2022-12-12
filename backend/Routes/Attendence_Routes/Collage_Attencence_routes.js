@@ -8,7 +8,6 @@ import {
 import {
   giveattendence,
   getUserAttendence,
-  assignLeave,
   getallattendence,
   getSingleUserAttendence,
   getAllStudentAttendence,
@@ -17,24 +16,7 @@ import {
 
 const router = express.Router();
 
-router.post("/attendence", verifiedStatus, AuthenticatedUser, giveattendence);
-
-router.get(
-  "/userAttendence/:id",
-  verifiedStatus,
-  AuthenticatedUser,
-  getUserAttendence
-);
-
 // Admin Routes
-
-router.post(
-  "/assignleave/:UuId",
-  verifiedStatus,
-  AuthenticatedUser,
-  verifyRole("admin"),
-  assignLeave
-);
 
 router.get(
   "/getallAttendence",
@@ -45,7 +27,7 @@ router.get(
 );
 
 router.get(
-  "/singleUserattencence/:UuId",
+  "/single/User/attendence/:UuId",
   verifiedStatus,
   AuthenticatedUser,
   verifyRole("admin"),
@@ -53,7 +35,7 @@ router.get(
 );
 
 router.get(
-  "/AllStudentattendence",
+  "/AllStudent/attendence",
   verifiedStatus,
   AuthenticatedUser,
   verifyRole("admin"),
@@ -67,7 +49,16 @@ router.get(
   verifiedStatus,
   AuthenticatedUser,
   verifyRole("admin", "teacher"),
-  getAllStudentAttendence
+  getsinglestudentAllAttendence,
+);
+
+router.post("/attendence", verifiedStatus, AuthenticatedUser, giveattendence);
+
+router.get(
+  "/userAttendence/:id",
+  verifiedStatus,
+  AuthenticatedUser,
+  getUserAttendence
 );
 
 export default router;

@@ -1,5 +1,6 @@
 import CollageAttendence from "../../Models/Attendence_model/Collage-Attendence.js";
 import StudentAttendence from "../../Models/Attendence_model/Student-Attendence.js";
+import moment from "moment/moment.js";
 
 const weekday = [
   "Sunday",
@@ -11,8 +12,9 @@ const weekday = [
   "Saturday",
 ];
 const d = new Date();
+var date = moment();
 let day = weekday[d.getDay()];
-let date = date.format("D/MM/YYYY");
+let currentDate = date.format("D/MM/YYYY");
 let time = d.toLocaleTimeString();
 let dayType = "holiday";
 if (day == "Sunday") {
@@ -26,16 +28,17 @@ if (day == "Sunday") {
 export const giveattendence = async (req, res, next) => {
   try {
     const newdata = {
-      userId: req.user.id,
+      userID: req.user.id,
       UserUuid: req.user.uuid,
       department: req.user.department,
+      firstname: req.user.firstname,
+      lastname: req.user.lastname,
       day: day,
-      date: date,
+      date: currentDate,
       time: time,
       attendence: true,
       dayType: dayType,
     };
-    console.log(newdata);
     const newAttendence = new CollageAttendence({ ...newdata });
     await newAttendence.save();
     res.status(200).send("Your Attendence is registered Successfully");
@@ -48,7 +51,7 @@ export const getUserAttendence = async (req, res, next) => {
   if (req.params.id === req.user.id) {
     try {
       const userAttendence = await CollageAttendence.find({
-        userId: req.params.id,
+        userID: req.params.id,
       });
       res.status(200).json(userAttendence);
     } catch (error) {
@@ -64,25 +67,6 @@ export const getUserAttendence = async (req, res, next) => {
 
 // Admin
 
-export const assignLeave = async (req, res, next) => {
-  try {
-    const profile = await CollageAttendence.findOne({ UuId: req.params.UuId });
-    if (profile) {
-      if (profile.leaveType == false) {
-        profile.leaveType = true;
-      } else if (profile.leaveType == true) {
-        profile.leaveType = false;
-      } else {
-        profile.leaveType = profile.leaveType;
-      }
-      const result = await profile.save();
-      return res.status(200).json(result.leaveType);
-    }
-  } catch (error) {
-    next(error);
-  }
-};
-
 export const getallattendence = async (req, res, next) => {
   try {
     const attendence = await CollageAttendence.find();
@@ -95,7 +79,7 @@ export const getallattendence = async (req, res, next) => {
 export const getSingleUserAttendence = async (req, res, next) => {
   try {
     const singleAttendence = await CollageAttendence.find({
-      UuId: req.params.UuId,
+      UserUuid: req.params.UuId,
     });
     res.status(200).json(singleAttendence);
   } catch (error) {
@@ -117,7 +101,7 @@ export const getAllStudentAttendence = async (req, res, next) => {
 export const getsinglestudentAllAttendence = async (req, res, next) => {
   try {
     const singleAttendence = await StudentAttendence.find({
-      UuId: req.params.UuId,
+      UserUuid: req.params.UuId,
     });
     res.status(200).json(singleAttendence);
   } catch (error) {

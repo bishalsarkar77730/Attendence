@@ -14,7 +14,15 @@ const CollageAttendenceSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    Day: {
+    firstname: {
+      type: String,
+      require: true,
+    },
+    lastname: {
+      type: String,
+      require: true,
+    },
+    day: {
       type: String,
       required: true,
     },
@@ -27,10 +35,6 @@ const CollageAttendenceSchema = new mongoose.Schema(
       required: true,
     },
     attendence: {
-      type: Boolean,
-      default: false,
-    },
-    leaveType: {
       type: Boolean,
       default: false,
     },
