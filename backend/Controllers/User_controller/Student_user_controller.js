@@ -10,6 +10,7 @@ export const updateStudent = async (req, res, next) => {
         address: req.body.address,
         email: req.body.email,
         number: req.body.number,
+        department: req.body.department,
       };
       const updatedUser = await StudentUser.findByIdAndUpdate(
         req.params.id,
@@ -61,4 +62,3 @@ export const getstudent = async (req, res, next) => {
     });
   }
 };
-

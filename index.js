@@ -10,6 +10,8 @@ import Collage_AuthRoutes from "./backend/Routes/Auth_routes/Collage_Auth_routes
 import Student_AuthRoutes from "./backend/Routes/Auth_routes/Student_Auth_routes.js";
 import Collage_UserRoutes from "./backend/Routes/User_Routes/Collage_User_routes.js";
 import Student_UserRoutes from "./backend/Routes/User_Routes/Student_user_routes.js";
+import Collage_attendence_Routes from "./backend/Routes/Attendence_Routes/Collage_Attencence_routes.js";
+import Student_attendence_Routes from "./backend/Routes/Attendence_Routes/Student_Attendence_routes.js";
 
 const app = express();
 dotenv.config();
@@ -34,6 +36,8 @@ app.use("/api/collageauth", Collage_AuthRoutes);
 app.use("/api/studentauth", Student_AuthRoutes);
 app.use("/api/user", Collage_UserRoutes);
 app.use("/api/student", Student_UserRoutes);
+app.use("/api/collage", Collage_attendence_Routes);
+app.use("/api/student", Student_attendence_Routes);
 
 app.listen(process.env.LOCAL_HOST_PORT, () => {
   connect();

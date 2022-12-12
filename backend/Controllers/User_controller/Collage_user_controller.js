@@ -11,6 +11,7 @@ export const update = async (req, res, next) => {
         address: req.body.address,
         email: req.body.email,
         number: req.body.number,
+        department: req.body.department,
       };
       const updatedUser = await CollageUser.findByIdAndUpdate(
         req.params.id,

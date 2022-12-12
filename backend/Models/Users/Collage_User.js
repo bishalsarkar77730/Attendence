@@ -22,9 +22,9 @@ const CollageSchema = new mongoose.Schema(
     },
     address: {
       type: String,
-      require: true
+      require: true,
     },
-    email:{
+    email: {
       type: String,
       require: true,
     },
@@ -33,17 +33,23 @@ const CollageSchema = new mongoose.Schema(
       require: true,
       unique: true,
     },
+    department: {
+      type: String,
+      enum: ["BSC(CS)", "plane(Bsc)", "Biotechnology", "BCA", "BA", "Bcom"],
+    },
     password: {
       type: String,
       require: true,
     },
     role: {
       type: String,
-      enum: ['teacher', 'admin'],
+      default: "teacher",
+      enum: ["teacher", "admin"],
       require: true,
-  },
+    },
     verified: {
       type: Boolean,
+      default: false,
       require: true,
     },
   },

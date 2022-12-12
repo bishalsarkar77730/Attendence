@@ -50,8 +50,9 @@ export const signup = async (req, res, next) => {
       address: req.body.address,
       email: req.body.email,
       number: req.body.number,
-      role: req.body.role,
-      verified: false,
+      department: req.body.department,
+      // role: req.body.role,
+      // verified: false,
     };
 
     const salt = bcrypt.genSaltSync(10);
@@ -93,6 +94,7 @@ export const signin = async (req, res, next) => {
         id: user._id,
         uuid: user.UuId,
         role: user.role,
+        department: user.department,
         verified: user.verified,
       },
       process.env.JWT

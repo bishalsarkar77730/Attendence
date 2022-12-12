@@ -22,9 +22,9 @@ const StudentSchema = new mongoose.Schema(
     },
     address: {
       type: String,
-      require: true
+      require: true,
     },
-    email:{
+    email: {
       type: String,
       require: true,
     },
@@ -37,12 +37,18 @@ const StudentSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    department: {
+      type: String,
+      enum: ["BSC(CS)", "plane(Bsc)", "Biotechnology", "BCA", "BA", "Bcom"],
+      require: true,
+    },
     role: {
       type: String,
       require: true,
-  },
+    },
     verified: {
       type: Boolean,
+      default: false,
       require: true,
     },
   },
