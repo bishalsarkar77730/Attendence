@@ -1,19 +1,20 @@
 import React from "react";
-import QRCode from "react-qr-code";
+import "./App.css";
+
+// Import Components
+import GenrateQr from "./Components/Qr-Generator/Genrate-Qr";
+import Scanner from "./Components/Qr-Scanner/Scanner";
 
 const App = () => {
-  let value = JSON.stringify({ email: 'bishalsarkar.ml@gmail.com', name: 'Bishal Sarkar', class: 'BCA Final', Attendence: 'Present' })
-
   return (
-    <div
-      style={{ height: "auto", margin: "auto", marginTop:"100px", maxWidth: 64, width: "100%" }}
-    >
-      <QRCode
-        size={256}
-        style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-        value={value}
-        viewBox={`0 0 256 256`}
-      />
+    <div className="App">
+      <h1>Hello Folks</h1>
+      <div className="gen">
+        <GenrateQr />
+      </div>
+      <div className="sca">
+        <Scanner />
+      </div>
     </div>
   );
 };
