@@ -13,7 +13,7 @@ h1 {
 }
 .main {
   width: 700px;
-  height: 600px;
+  height: 650px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 10px 100px #ff6962;
@@ -117,11 +117,33 @@ button:hover {
 }
 
 #chk:checked ~ .login {
-  transform: translateY(-600px);
+  transform: translateY(-650px);
 }
 #chk:checked ~ .login label {
   transform: scale(1);
 }
 #chk:checked ~ .signup label {
   transform: scale(0.6);
+}
+
+.back{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.change-log{
+  text-decoration: none;
+  width: 30%;
+  height: 30px;
+  background-color: #ff6962;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  text-align: center;
 }

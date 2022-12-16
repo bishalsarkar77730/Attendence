@@ -152,30 +152,31 @@ nav {
   margin: 0px 0 30px;
 }
 
-#intro-info span {
+#intro-info h2 {
   display: block;
   font-family: raleway;
   font-weight: 600;
   padding: 0 0 55px;
-  font-size: 23px;
+  font-size: 30px;
 }
 
-.brand-btn {
+#intro span.brand-btn {
   text-decoration: none;
   background-color: #ef4b42;
   border: 2px solid #ef4b42;
   color: white;
   padding: 10px 40px;
   border-radius: 30px;
-  font-size: 17px;
+  font-size: 20px;
+  font-weight: bold;
   font-family: roboto;
 
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-.brand-btn:hover,
-.brand-btn:focus {
+#intro span.brand-btn:hover,
+#intro span.brand-btn:focus {
   background-color: transparent;
   color: #ef4b42;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import {
@@ -34,7 +34,7 @@ const SignupSignIn = () => {
         department,
         password,
       });
-      alert("Your Account is Created Please Login")
+      alert("Your Account is Created Please Login");
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -63,7 +63,6 @@ const SignupSignIn = () => {
       <div className="box">
         <div className="main">
           <input type="checkbox" id="chk" aria-hidden="true" />
-
           <div className="signup">
             <form>
               <label for="chk" aria-hidden="true">
@@ -115,9 +114,16 @@ const SignupSignIn = () => {
                 </div>
               </div>
               <button onClick={handleSignup}>Sign up</button>
+              <div className="back">
+                <Link to="/studentsignup-signin" className="change-log">
+                  Student Login
+                </Link>
+                <Link to="/" className="change-log">
+                  Go Home
+                </Link>
+              </div>
             </form>
           </div>
-
           <div className="login">
             <form>
               <label for="chk" aria-hidden="true">
