@@ -1,17 +1,22 @@
 import React from "react";
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
 // Import Components
-// import SignupSignIn from "./Components/Signup-SignIn/SignupSignIn";
 import Home from "./Components/Home/Home";
+import SignupsignIn from "./Components/Signup-SignIn/SignupSignIn";
 // import GenrateQr from "./Components/Qr-Generator/Genrate-Qr";
 // import Scanner from "./Components/Qr-Scanner/Scanner";
 
 const App = () => {
   return (
     <>
-    <Home />
-    {/* <SignupSignIn />
+      <Routes>
+        <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/signup-signin" element={<SignupsignIn />}></Route>
+      </Routes>
+
+      {/* <SignupSignIn />
     <div className="App">
       <div className="gen">
         <GenrateQr />

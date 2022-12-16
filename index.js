@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import cors from "cors";
+import https from 'https';
+import fs from 'fs';
 
 // import All Routes
 import Collage_AuthRoutes from "./backend/Routes/Auth_routes/Collage_Auth_routes.js";
@@ -12,6 +14,11 @@ import Collage_UserRoutes from "./backend/Routes/User_Routes/Collage_User_routes
 import Student_UserRoutes from "./backend/Routes/User_Routes/Student_user_routes.js";
 import Collage_attendence_Routes from "./backend/Routes/Attendence_Routes/Collage_Attencence_routes.js";
 import Student_attendence_Routes from "./backend/Routes/Attendence_Routes/Student_Attendence_routes.js";
+
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
 
 const app = express();
 dotenv.config();
@@ -39,9 +46,9 @@ app.use("/api/student", Student_UserRoutes);
 app.use("/api/collage", Collage_attendence_Routes);
 app.use("/api/student", Student_attendence_Routes);
 
-app.listen(process.env.LOCAL_HOST_PORT, () => {
+https.createServer(options, app).listen(process.env.LOCAL_HOST_PORT, () => {
   connect();
   console.log(
-    `server is running on http://localhost:${process.env.LOCAL_HOST_PORT}`
+    `server is running on https://localhost:${process.env.LOCAL_HOST_PORT}`
   );
 });

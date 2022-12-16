@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 // Import images
 import bg1 from "../../images/bg-1.svg";
@@ -17,26 +18,25 @@ const Home = () => {
 
         <nav>
           <span className="logo">Qr-Attendence</span>
-          <div className="menu-btn-3" onclick="menuBtnFunction(this)">
+          <div className="menu-btn-3">
             <span></span>
           </div>
           <div className="mainMenu">
-            <a href="a">
+            <Link to="/">
               <span>Home</span>
-            </a>
-            <a href="a">
+            </Link>
+            <Link to="/">
               <span>Student Section</span>
-            </a>
-            <a href="a">
+            </Link>
+            <Link to="/">
               <span>Teacher Section</span>
-            </a>
-            <a href="a">
+            </Link>
+            <Link to="/">
               <span>Admin Section</span>
-            </a>
-            <a href="#delivery">
-              <span>About Me</span>
-            </a>
-            <a href="a">Signup & Signin</a>
+            </Link>
+            <Link to="/signup-signin">
+              <span>Signup & Signin</span>
+            </Link>
           </div>
         </nav>
       </header>
