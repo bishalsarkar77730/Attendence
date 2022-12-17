@@ -1,38 +1,19 @@
 import React from "react";
-import axios from "axios";
 import "./Home.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/Slices/userSlice";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // Import images
 import bg1 from "../../images/bg-1.svg";
 // import NoWork from "./NoWork";
 
 const Home = () => {
-  const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const UserLogOut = async () => {
-    if (currentUser.role === "admin") {
-      await axios.post("/collageauth/signout");
-      dispatch(logout());
-      navigate("/signup-signin");
-    } else if (currentUser.role === "teacher") {
-      await axios.post("/collageauth/signout");
-      dispatch(logout());
-      navigate("/signup-signin");
-    } else {
-      await axios.post("/studentauth/signout");
-      dispatch(logout());
-      navigate("/signup-signin");
-    }
-  };
 
   var current = new Date();
   var a = current.getHours();
   var greeting = "";
-  if (a < 10) {
+  if (a < 12) {
     greeting = "Good morning";
   } else if (a < 18) {
     greeting = "Good Noon";
@@ -47,12 +28,8 @@ const Home = () => {
           <li>+91 7773015690</li>
           <li>bishalsarkar.ml@gmail.com</li>
         </ul>
-
         <nav>
           <span className="logo">Qr-Attendence</span>
-          <div className="menu-btn-3">
-            <span></span>
-          </div>
           <div className="mainMenu">
             <Link to="/">
               <span>Home</span>
@@ -63,13 +40,13 @@ const Home = () => {
             <Link to="/">
               <span>Teacher Section</span>
             </Link>
-            <Link to="/">
+            <Link to="/admin-section">
               <span>Admin Section</span>
             </Link>
-            <Link to="/signup-signin">
+            <Link to="#Admin-main">
               {currentUser ? (
-                <spam onClick={UserLogOut}>
-                  Log Out {currentUser.firstname}
+                <spam>
+                  {currentUser.firstname} -=- {currentUser.role}
                 </spam>
               ) : (
                 <Link to="/signup-signin">
@@ -80,7 +57,6 @@ const Home = () => {
           </div>
         </nav>
       </header>
-
       <section id="intro">
         <div id="intro-info">
           <div>
@@ -101,7 +77,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
         <div id="development-img">
           <img src={bg1} alt="" />
         </div>

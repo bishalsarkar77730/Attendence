@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.2.1",
     "axios": "^1.2.1",
     "barcode-react-scanner": "1.2.0",
+    "random-avatar-generator": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-qr-code": "^2.0.9",

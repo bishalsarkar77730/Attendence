@@ -1,4 +1,13 @@
-/* .App {
-    text-align: center;
-  }
-   */
+#Admin-main{
+  background: white;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+}
+
+.Admin-main2{
+  width: 83%;
+  /* margin-left: 17%; */
+}
