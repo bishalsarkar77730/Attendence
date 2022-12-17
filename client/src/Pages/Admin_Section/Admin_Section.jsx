@@ -78,9 +78,9 @@ const AdminSection = () => {
                 </Link>
               </li>
               <li>
-                <a href="javascriptvoid">
+                <Link to="/admin-scan">
                   <ion-icon name="scan-circle-outline"></ion-icon> Scan-Qr
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="javascriptvoid">

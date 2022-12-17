@@ -5,13 +5,7 @@ import { useSelector } from "react-redux";
 
 const GenrateQr = () => {
   const { currentUser } = useSelector((state) => state.user);
-  let value = JSON.stringify({
-    URL: "http://localhost:3001/api/collage/attendence",
-    // Teacher: {
-    //   TeacherUserId: currentUser.id,
-    //   TeacherUuid: currentUser.uuid,
-    // },
-  });
+  let value = "/collage/attendence"
 
   return (
     <div className="box">
