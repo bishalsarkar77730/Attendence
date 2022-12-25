@@ -19,8 +19,8 @@ const SignupSignIn = () => {
   const [department, setDepartment] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
+ 
+ const dispatch = useDispatch();
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
