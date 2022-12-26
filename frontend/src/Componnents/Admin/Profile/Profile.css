@@ -1,0 +1,140 @@
+img {
+  max-width: 100%;
+  display: block;
+}
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.card::after,
+.card img {
+  border-radius: 50%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.prodiv {
+  display: flex;
+}
+
+.card {
+  justify-content: center;
+  padding: 2.5rem 2rem;
+  background-color: #212f3d;
+  width: auto;
+  margin-top: -20px;
+  min-height: 91.5vh;
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  border-left: 2px solid white;
+}
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+.card::before {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  top: -0.7rem;
+  left: -0.7rem;
+}
+.card::after {
+  height: 15rem;
+  width: 15rem;
+  background-color: #4172f5aa;
+  top: -8rem;
+  right: -8rem;
+  box-shadow: 2rem 6rem 0 -3rem #fff;
+}
+
+.card img {
+  width: 8rem;
+  min-width: 80px;
+  box-shadow: 0 0 0 5px #fff;
+}
+
+.infos {
+  margin-left: 1.5rem;
+}
+
+.name {
+  margin-bottom: 1rem;
+}
+.name h2 {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+.name h4 {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: rgb(255, 254, 254);
+}
+
+.uls {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.stats {
+  margin-bottom: 1rem;
+}
+.stats li {
+  background: white;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  counter-increment: gradient-counter;
+  margin-top: 1rem;
+  min-height: 3rem;
+  padding: 1rem 1rem 1rem 3rem;
+  display: flex;
+  width: 20rem;
+}
+.stats li h3 {
+  font-size: 1rem;
+  color: #212f3d;
+  letter-spacing: 1px;
+}
+.stats li h4 {
+  margin-left: 10px;
+  font-size: 0.77rem;
+  letter-spacing: 1px;
+}
+
+.links {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.links button {
+  font-family: "Poppins", sans-serif;
+  width: 45%;
+  padding: 0.5rem;
+  border: 1px solid #222;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s linear;
+}
+.links .follow {
+  background-color: tomato;
+}
+/* .links .view:hover {
+  background-color: #222;
+  color: #fff;
+} */
+.links .view{
+  background-color: tomato;
+  margin-right: -6px !important;
+}
+.links .follow:hover,
+.links .view:hover {
+  box-shadow: 0px 10px 50px #999999;
+}

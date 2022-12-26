@@ -5,10 +5,10 @@
   align-items: center;
   font-family: "Jost", sans-serif;
 }
-.main {
+.main2 {
   background-color: #363636;
-  width: 700px;
-  height: 650px;
+  width: 700px !important;
+  height: 650px !important;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 10px 100px #999999;
@@ -82,7 +82,7 @@ button:hover {
   background: #6d44b8;
 }
 .login {
-  height: 600px;
+  height: 600px !important;
   background: #363636;
   box-shadow: 0px 10px 50px #999999;
   border-radius: 60% / 10%;

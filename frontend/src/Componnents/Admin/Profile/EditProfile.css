@@ -1,0 +1,76 @@
+.container2 {
+  padding: 2rem;
+  background-color: #212f3d;
+  width: auto;
+  height: 91vh;
+  position: relative;
+  border-left: 2px solid white;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #d7dbdf;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* .grid1 {
+  margin-right: 550px;
+} */
+
+.labes {
+  margin-right: 100px;
+  font-size: 1rem;
+  margin-bottom: -15px;
+}
+
+.labes2 {
+  margin-right: 100px;
+  font-size: 1rem;
+  margin-bottom: -15px;
+}
+
+.grid2 select {
+  width: 165% !important;
+}
+
+.likhan {
+  width: 150%;
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+.button2,
+.button3 {
+  font-weight: bold;
+  line-height: 19px;
+  background: #5850eb;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 6px;
+  color: white;
+  width: 30%;
+}
+.button2:hover {
+  background: #6e67ee;
+}
+.button2:focus {
+  background: #4239e8;
+}
+
+.button3:hover {
+  background-color: rgb(241, 96, 96);
+}
+.button3:focus {
+  background: #4239e8;
+}

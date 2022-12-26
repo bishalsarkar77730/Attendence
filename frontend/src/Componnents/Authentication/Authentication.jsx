@@ -109,7 +109,7 @@ const SignupSignIn = () => {
 
   return (
     <div className="box">
-      <div className="main">
+      <div className="main2">
         <input type="checkbox" id="chk" aria-hidden="true" />
         <div className="signup">
           <form>
