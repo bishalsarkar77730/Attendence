@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./sidebar.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,12 +14,13 @@ import GetUsers from "../Admin/GetUsers/GetUsers";
 import AllUserMain from "../Admin/AllUsers/AllUserMain";
 import QrMain from "../Admin/Qr/QrMain";
 import YourAttendence from "../Admin/YourAttendence/YourAttendence";
+import MainAttendence from "../Admin/GetAttendenceByUuid/MainAttendence";
 
 const generator = new AvatarGenerator();
 let Avatar = generator.generateRandomAvatar();
 
 const Admin_sidebar = () => {
-  const [active, setActive] = useState("ProfileCard")
+  const [active, setActive] = useState("ProfileCard");
 
   const navigate = useNavigate();
   const { currentUser } = useSelector((state) => state.user);
@@ -59,7 +60,8 @@ const Admin_sidebar = () => {
                 </li>
                 <li>
                   <Link onClick={() => setActive("ProfileCard")}>
-                    <ion-icon name="person-circle-outline"></ion-icon> User Profile
+                    <ion-icon name="person-circle-outline"></ion-icon> User
+                    Profile
                   </Link>
                 </li>
                 <li>
@@ -75,17 +77,21 @@ const Admin_sidebar = () => {
                 </li>
                 <li>
                   <Link onClick={() => setActive("Usercard")}>
-                    <ion-icon name="id-card-outline"></ion-icon> User & Student UUID
+                    <ion-icon name="id-card-outline"></ion-icon> User & Student
+                    UUID
                   </Link>
                 </li>
                 <li>
                   <Link onClick={() => setActive("AllUsercard")}>
-                    <ion-icon name="people-circle-outline"></ion-icon> All Users & All Students
+                    <ion-icon name="people-circle-outline"></ion-icon> All Users
+                    & All Students
                   </Link>
                 </li>
                 <li>
                   <Link onClick={() => setActive("QrCard")}>
-                    <ion-icon name="qr-code-outline"></ion-icon> <ion-icon name="scan-circle-outline"></ion-icon> Qr-Genrate & Scan
+                    <ion-icon name="qr-code-outline"></ion-icon>{" "}
+                    <ion-icon name="scan-circle-outline"></ion-icon> Qr-Genrate
+                    & Scan
                   </Link>
                 </li>
                 <li>
@@ -94,9 +100,10 @@ const Admin_sidebar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="javascriptvoid">
-                    <ion-icon name="id-card-outline"></ion-icon> Get Attendence UUID
-                  </a>
+                  <Link onClick={() => setActive("MainAttendenceCard")}>
+                    <ion-icon name="id-card-outline"></ion-icon> Get Attendence
+                    UUID
+                  </Link>
                 </li>
                 <li>
                   <Link onClick={UserLogOut}>
@@ -115,6 +122,7 @@ const Admin_sidebar = () => {
           {active === "AllUsercard" && <AllUserMain />}
           {active === "QrCard" && <QrMain />}
           {active === "AllYourAttendenceCard" && <YourAttendence />}
+          {active === "MainAttendenceCard" && <MainAttendence />}
         </div>
       </div>
     </>
