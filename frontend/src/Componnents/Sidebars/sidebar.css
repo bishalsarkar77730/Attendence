@@ -12,7 +12,7 @@
 .sidebar {
   background: #212f3d;
   width: 17%;
-  /* min-height: 91.4vh !important; */
+  height: 94.4vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,8 @@
   gap: 50px;
 }
 .sidebar .profile {
-  background-color: aqua;
+  background-color: #212f3d;
+  box-shadow: 0px 5px 10px #999999;
   border-radius: 10px;
   display: flex;
   gap: 20px;
@@ -37,6 +38,11 @@
   color: #fff;
   font-weight: bolder;
 }
+
+.sidebar .profile p{
+  color: #fff;
+}
+
 .sidebar .profile img {
   margin-bottom: 15px;
   width: 60px;

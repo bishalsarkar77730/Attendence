@@ -9,6 +9,11 @@ import { logout } from "../../redux/Slices/UserSlice";
 // Import Components
 import Profile from "../Admin/Profile/Profile";
 import EditProfile from "../Admin/Profile/EditProfile";
+import VerifyChangeRole from "../Admin/Verify&ChangeRole/Verify_ChangeRole";
+import GetUsers from "../Admin/GetUsers/GetUsers";
+import AllUserMain from "../Admin/AllUsers/AllUserMain";
+import QrMain from "../Admin/Qr/QrMain";
+import YourAttendence from "../Admin/YourAttendence/YourAttendence";
 
 const generator = new AvatarGenerator();
 let Avatar = generator.generateRandomAvatar();
@@ -63,60 +68,34 @@ const Admin_sidebar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="javascriptvoid">
+                  <Link onClick={() => setActive("verifycard")}>
                     <ion-icon name="lock-closed-outline"></ion-icon> Verify &
                     Change Role
-                  </a>
-                </li>
-                <li>
-                  <a href="javascriptvoid">
-                    <ion-icon name="id-card-outline"></ion-icon> User UUID
-                  </a>
-                </li>
-                <li>
-                  <a href="javascriptvoid">
-                    <ion-icon name="people-circle-outline"></ion-icon> All Users
-                  </a>
-                </li>
-                <li>
-                  <a href="javascriptvoid">
-                    <ion-icon name="id-card-outline"></ion-icon> Student UUID
-                  </a>
-                </li>
-                <li>
-                  <a href="javascriptvoid">
-                    <ion-icon name="people-circle-outline"></ion-icon> All
-                    Students
-                  </a>
-                </li>
-                <li>
-                  <Link to="/admin-Qr">
-                    <ion-icon name="qr-code-outline"></ion-icon> Qr-Genrate
                   </Link>
                 </li>
                 <li>
-                  <Link to="/admin-scan">
-                    <ion-icon name="scan-circle-outline"></ion-icon> Scan-Qr
+                  <Link onClick={() => setActive("Usercard")}>
+                    <ion-icon name="id-card-outline"></ion-icon> User & Student UUID
                   </Link>
                 </li>
                 <li>
-                  <a href="javascriptvoid">
+                  <Link onClick={() => setActive("AllUsercard")}>
+                    <ion-icon name="people-circle-outline"></ion-icon> All Users & All Students
+                  </Link>
+                </li>
+                <li>
+                  <Link onClick={() => setActive("QrCard")}>
+                    <ion-icon name="qr-code-outline"></ion-icon> <ion-icon name="scan-circle-outline"></ion-icon> Qr-Genrate & Scan
+                  </Link>
+                </li>
+                <li>
+                  <Link onClick={() => setActive("AllYourAttendenceCard")}>
                     <ion-icon name="grid-outline"></ion-icon> Your Attendence
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="javascriptvoid">
-                    <ion-icon name="apps-outline"></ion-icon> Collage Attendence
-                  </a>
-                </li>
-                <li>
-                  <a href="javascriptvoid">
-                    <ion-icon name="apps-outline"></ion-icon> Student Attendence
-                  </a>
-                </li>
-                <li>
-                  <a href="javascriptvoid">
-                    <ion-icon name="id-card-outline"></ion-icon> Attendence UUID
+                    <ion-icon name="id-card-outline"></ion-icon> Get Attendence UUID
                   </a>
                 </li>
                 <li>
@@ -131,6 +110,11 @@ const Admin_sidebar = () => {
         <div className="left-side">
           {active === "ProfileCard" && <Profile />}
           {active === "EditCard" && <EditProfile />}
+          {active === "verifycard" && <VerifyChangeRole />}
+          {active === "Usercard" && <GetUsers />}
+          {active === "AllUsercard" && <AllUserMain />}
+          {active === "QrCard" && <QrMain />}
+          {active === "AllYourAttendenceCard" && <YourAttendence />}
         </div>
       </div>
     </>

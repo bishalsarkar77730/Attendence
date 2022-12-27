@@ -1,0 +1,21 @@
+.UuidUser {
+  padding: 2rem;
+  background-color: #212f3d;
+  width: auto;
+  height: 91vh;
+  position: relative;
+  border-left: 2px solid white;
+}
+
+.formdata{
+    display: flex;
+    align-items: center;
+}
+
+.formdata Input{
+    width: 30%;
+}
+
+.formdata button{
+    width: 20%;
+}

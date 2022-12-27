@@ -1,0 +1,14 @@
+.QrCodeee {
+  background-color: rgb(163, 179, 193);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.QrCodeee h2 {
+  margin-bottom: 30px !important;
+  margin-top: 50px !important;
+  text-align: center;
+  color: #212f3d;
+}

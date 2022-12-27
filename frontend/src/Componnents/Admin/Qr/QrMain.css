@@ -1,10 +1,16 @@
-.Editform {
-  display: flex;
-  justify-content: space-evenly;
+.mainQr {
   padding: 2rem;
   background-color: #212f3d;
   width: auto;
   height: 91vh;
   position: relative;
   border-left: 2px solid white;
+}
+
+.qrbut {
+  display: flex;
+}
+
+.qrbut button {
+  width: 20%;
 }
