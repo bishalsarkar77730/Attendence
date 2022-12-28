@@ -55,7 +55,7 @@ const Admin_sidebar = () => {
               <ul>
                 <li>
                   <Link to="/">
-                    <ion-icon name="qr-code-outline"></ion-icon> Home
+                    <ion-icon name="home-outline"></ion-icon> Home
                   </Link>
                 </li>
                 <li>
@@ -89,9 +89,7 @@ const Admin_sidebar = () => {
                 </li>
                 <li>
                   <Link onClick={() => setActive("QrCard")}>
-                    <ion-icon name="qr-code-outline"></ion-icon>{" "}
-                    <ion-icon name="scan-circle-outline"></ion-icon> Qr-Genrate
-                    & Scan
+                    <ion-icon name="qr-code-outline"></ion-icon>Qr-Genrate
                   </Link>
                 </li>
                 <li>

@@ -8,11 +8,8 @@ const GenrateQr = () => {
   let id = currentUser._id;
   let UUID = currentUser.UuId;
   let value = JSON.stringify({
-    URL: "/student/giveattendence",
-    Teacher: {
-      TeacherUserId: { id },
-      TeacherUuid: { UUID },
-    },
+    TeacherUserId: id,
+    TeacherUuid: UUID,
   });
 
   return (

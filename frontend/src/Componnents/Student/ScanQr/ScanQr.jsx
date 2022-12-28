@@ -6,32 +6,29 @@ import QrReader from "react-qr-reader";
 const Scanner = () => {
   const [selected, setSelected] = useState(" environment");
   const [startScan, setStartScan] = useState(false);
-  const [loadingScan, setLoadingScan] = useState(false);
   const [data, setData] = useState("");
 
   const handleScan = async (scanData) => {
-    setLoadingScan(true);
     console.log(`loaded data data`, scanData);
     if (scanData && scanData !== "") {
       console.log(`loaded >>>`, scanData);
       setData(scanData);
       setStartScan(false);
-      setLoadingScan(false);
     }
   };
   const handleError = (err) => {
     console.error(err);
   };
 
-  let url = data.url;
-  let teacherdata = data.TeacherUserId;
-  let teacheruuid = data.TeacherUuid;
+  let ab = data && JSON.parse(data);
+  let TeacherUserId = ab.TeacherUserId;
+  let TeacherUuid = ab.TeacherUuid;
 
   const handleAttendence = async () => {
     try {
-      const senddata = await axios.post(url, {
-        teacherdata,
-        teacheruuid,
+      const senddata = await axios.post("/student/giveattendence", {
+        TeacherUserId,
+        TeacherUuid,
       });
       alert(senddata.data);
     } catch (error) {
@@ -40,7 +37,7 @@ const Scanner = () => {
   };
 
   return (
-    <div className="App">
+    <div className="ScanComp">
       <button
         onClick={() => {
           setStartScan(!startScan);
@@ -63,7 +60,6 @@ const Scanner = () => {
           />
         </>
       )}
-      {loadingScan && <p>Loading</p>}
       {data !== "" && (
         <button onClick={handleAttendence}>Send Attendence</button>
       )}

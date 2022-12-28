@@ -3,9 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/Slices/UserSlice";
 import axios from "axios";
-import "./EditProfile.css";
 
-const EditProfile = () => {
+const StuderntProfileEdit = () => {
   const { currentUser } = useSelector((state) => state.user);
   const [username, setUsername] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -20,7 +19,7 @@ const EditProfile = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const resdata = await axios.get(`/user/${currentUser._id}`);
+        const resdata = await axios.get(`/student/${currentUser._id}`);
         setUserdata(resdata.data);
       } catch (error) {
         console.log(error);
@@ -41,8 +40,8 @@ const EditProfile = () => {
         address: address === "" ? userdata.address : address,
         department: department === "" ? userdata.department : department,
       };
-      await axios.put(`/user/${currentUser._id}`, payload);
-      navigate("/collage");
+      await axios.put(`/student/${currentUser._id}`, payload);
+      navigate("/student");
     } catch (error) {
       console.log(error);
     }
@@ -51,8 +50,8 @@ const EditProfile = () => {
   const handleDelete = async () => {
     try {
       if (window.confirm("Are you sure you want to Delete Your Account")) {
-        await axios.delete(`/user/${currentUser._id}`);
-        await axios.post("/collageauth/signout");
+        await axios.delete(`/student/${currentUser._id}`);
+        await axios.post("/studentauth/signout");
         dispatch(logout());
         navigate("/");
       } else {
@@ -61,10 +60,8 @@ const EditProfile = () => {
       }
     } catch (error) {
       console.log(error);
-      navigate("/");
     }
   };
-
   return (
     <div class="container2">
       <h1 class="title">Edit Your Profile</h1>
@@ -117,7 +114,6 @@ const EditProfile = () => {
             <option value="BCA">BCA</option>
             <option value="BA">BA</option>
             <option value="Bcom">Bcom</option>
-            <option value="collageStaff">collageStaff</option>
           </select>
         </div>
       </div>
@@ -133,4 +129,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default StuderntProfileEdit;
