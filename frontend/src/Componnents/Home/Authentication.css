@@ -6,12 +6,12 @@
   font-family: "Jost", sans-serif;
 }
 .main2 {
-  background-color: #363636;
+  background-color: #212f3d;
   width: 700px !important;
   height: 650px !important;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0px 10px 100px #999999;
+  border: 2px solid #ffffff;
 }
 #chk {
   display: none;
@@ -83,8 +83,8 @@ button:hover {
 }
 .login {
   height: 600px !important;
-  background: #363636;
-  box-shadow: 0px 10px 50px #999999;
+  background: #212f3d;
+  box-shadow: 0px 5px 40px #999999;
   border-radius: 60% / 10%;
   transform: translateY(-180px);
   transition: 0.8s ease-in-out;
