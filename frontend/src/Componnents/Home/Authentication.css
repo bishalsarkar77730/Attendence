@@ -121,3 +121,15 @@ button:hover {
 #chk:checked ~ .signup label {
   transform: scale(0.6);
 }
+
+.pass-in{
+  display: flex;
+  flex-direction: row;
+}
+
+.iconss {
+  cursor: pointer;
+  position: absolute;
+  margin-top: 50px !important;
+  margin-left: 68% !important;
+}

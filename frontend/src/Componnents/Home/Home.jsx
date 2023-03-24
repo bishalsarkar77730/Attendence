@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -21,6 +22,7 @@ import bg1 from "../../images/bg1.png";
 // import SignupSignIn from "../Authentication/Authentication";
 
 const Home = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
   const [active, setActive] = useState("initialUser");
   const [username, setUsername] = useState("");
@@ -149,6 +151,10 @@ const Home = () => {
       });
       setActive("initialUser");
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -289,11 +295,20 @@ const Home = () => {
                     placeholder="User Name"
                     onChange={(e) => setUsername(e.target.value)}
                   />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
+                  <div className="pass-in">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Password"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <div className="iconss">
+                    {showPassword ? (
+                      <FaEyeSlash onClick={togglePasswordVisibility} />
+                    ) : (
+                      <FaEye onClick={togglePasswordVisibility} />
+                    )}
+                    </div>
+                  </div>
                   <button onClick={handleLogin}>
                     Collage & Staff -- Login
                   </button>
