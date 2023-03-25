@@ -1,37 +1,31 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Home.css";
 import Signup from "./Signup";
 
 const Home = () => {
   const [active, setActive] = useState("Home");
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
-  const [formErrors, setFormErrors] = useState({});
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-    setFormErrors({ ...formErrors, [name]: null });
-  };
-
   const validateForm = () => {
-    let errors = {};
-    if (!formData.username) {
-      errors.username = "Username is required";
+    if (!username) {
+      toast.error("Username is required", {
+        className:"toast-error"
+      });
     }
-    if (!formData.password) {
-      errors.password = "Password is required";
+    if (!password) {
+      toast.error("Password is required", {
+        className:"toast-error"
+      });
     }
-    setFormErrors(errors);
-    return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = (event) => {
@@ -57,25 +51,17 @@ const Home = () => {
           <div className="left-section">
             <div className="left-section-wrapper">
               <div className="form">
-                <form autoComplete="off" onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      name="username"
-                      value={formData.username}
-                      onChange={handleInputChange}
-                      placeholder="Username"
-                    />
-                    {formErrors.username && (
-                      <span className="error">{formErrors.username}</span>
-                    )}
-                  </div>
-                  <div className="form-group pass-in2">
+                <form autoComplete="off">
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+
+                  <div className="pass-in2">
                     <input
                       type={showPassword ? "text" : "password"}
-                      name="password"
-                      value={formData.password}
-                      onChange={handleInputChange}
+                      onChange={(e) => setPassword(e.target.value)}
                       placeholder="Password"
                     />
                     <div className="iconss2">
@@ -85,19 +71,11 @@ const Home = () => {
                         <FaEye onClick={togglePasswordVisibility} />
                       )}
                     </div>
-                    {formErrors.password && (
-                      <span className="error">{formErrors.password}</span>
-                    )}
                   </div>
                   <div className="btns">
-                    <div className="login-btns">
-                      <button type="submit" className="form-btn">
-                        <span className="form-btn-text">Login Teacher</span>
-                      </button>
-                      <button type="submit" className="form-btn">
-                        <span className="form-btn-text">Login Student</span>
-                      </button>
-                    </div>
+                    <button className="form-btn" onClick={handleSubmit}>
+                      <span className="form-btn-text">Login</span>
+                    </button>
                     <span className="sign">
                       Doesn't have account
                       <span
@@ -114,11 +92,12 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <ToastContainer />
         </>
       )}
       {active === "signupcard" && (
         <>
-          <Signup setActive={setActive} />
+          <Signup />
         </>
       )}
     </div>

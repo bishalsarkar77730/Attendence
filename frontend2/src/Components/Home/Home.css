@@ -53,11 +53,13 @@
   height: 100vh;
   display: flex;
   text-align: center !important;
+  justify-content: center;
 }
 
 .form {
   background: transparent;
   border: 2px solid white;
+  box-shadow: 0 0 10px #000 !important;
   display: flex;
   width: 80%;
   flex-direction: column;
@@ -67,9 +69,12 @@
 }
 
 .form2 {
+  width: 50%;
+  height: 95%;
+  margin-top: 20px;
   background: transparent;
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   align-items: center;
 }
 
@@ -89,12 +94,6 @@ input {
 input:focus {
   border: 1px solid black;
 }
-.login-btns {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
 
 .btns {
   display: flex;
@@ -104,6 +103,7 @@ input:focus {
 
 button {
   cursor: pointer;
+  width: 50%;
   padding: 16px 25px 16px 25px;
   margin-bottom: 20px;
   align-self: center;
@@ -121,20 +121,6 @@ button {
 .signup-btn {
   cursor: pointer;
   color: aqua;
-}
-
-.alag0 {
-  display: flex;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.alag1 {
-  width: 50% !important;
-}
-
-.alag2 {
-  width: 50% !important;
 }
 
 select {
@@ -174,6 +160,17 @@ select {
   position: absolute;
   margin-top: 15px !important;
   margin-left: 34% !important;
+}
+
+.toast-error {
+  position: "top-right";
+  autoclose: 5000;
+  hideprogressbar: false;
+  closeonclick: true;
+  pauseonhover: true;
+  draggable: true;
+  progress: undefined;
+  theme: "light";
 }
 
 @media screen and (max-width: 900px) {
