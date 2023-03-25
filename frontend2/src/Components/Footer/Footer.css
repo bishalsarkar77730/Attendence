@@ -1,0 +1,36 @@
+footer {
+  background-color: rgb(72, 72, 72);
+  color: aliceblue;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.foot-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.developer-info {
+  text-align: left;
+}
+
+.year {
+  text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .developer-info {
+    margin-bottom: 10px;
+  }
+
+  .year {
+    margin-top: 10px;
+  }
+}

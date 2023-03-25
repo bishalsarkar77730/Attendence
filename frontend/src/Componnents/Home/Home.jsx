@@ -15,11 +15,7 @@ import {
   loginFailure,
   loginSuccess,
 } from "../../redux/Slices/UserSlice";
-
-// Import images
-// import { logout } from "../../redux/Slices/UserSlice";
 import bg1 from "../../images/bg1.png";
-// import SignupSignIn from "../Authentication/Authentication";
 
 const Home = () => {
   const [showPassword, setShowPassword] = useState(false);

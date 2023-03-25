@@ -1,0 +1,261 @@
+.container {
+  background-image: url(../../Utils/home-bg2.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+}
+
+.right-section {
+  flex: 1 1 50%;
+}
+
+.left-section {
+  flex: 1 1 50%;
+}
+
+.right-section-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10% 0 20%;
+  color: #fff;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  padding-bottom: 32px;
+  text-shadow: 2px 1px 2px black;
+}
+
+.description {
+  font-weight: 500;
+  padding-bottom: 30px;
+  text-shadow: 2px 1px 2px black;
+}
+
+.left-section-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-section-wrapper2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  text-align: center !important;
+}
+
+.form {
+  background: transparent;
+  border: 2px solid white;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  padding-top: 32px;
+  border-radius: 8px;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form2 {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 80%;
+  padding: 16px 25px 16px 25px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-left: 10%;
+  align-self: center;
+  border: 1px solid rgb(185, 182, 211);
+  border-radius: 6px;
+  font-weight: 600;
+  color: #000000;
+}
+
+input:focus {
+  border: 1px solid black;
+}
+.login-btns {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  padding: 16px 25px 16px 25px;
+  margin-bottom: 20px;
+  align-self: center;
+  border-radius: 6px;
+  color: white;
+  background: rgb(56, 204, 140);
+  border: none;
+}
+
+.sign {
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.signup-btn {
+  cursor: pointer;
+  color: aqua;
+}
+
+.alag0 {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.alag1 {
+  width: 50% !important;
+}
+
+.alag2 {
+  width: 50% !important;
+}
+
+select {
+  position: relative;
+  margin-left: 70px;
+  margin-bottom: 20px;
+  width: 80% !important;
+  padding: 15px !important;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.pass-in {
+  display: flex;
+  flex-direction: row;
+}
+
+.pass-in2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.pass-in input {
+  margin-left: 14.5% !important;
+}
+
+.iconss {
+  cursor: pointer;
+  position: absolute;
+  margin-top: 15px !important;
+  margin-left: 45% !important;
+}
+
+.iconss2 {
+  cursor: pointer;
+  position: absolute;
+  margin-top: 15px !important;
+  margin-left: 34% !important;
+}
+
+@media screen and (max-width: 900px) {
+  .form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+  }
+
+  input {
+    width: 80%;
+    padding: 16px;
+    margin-left: 10%;
+    margin-left: 10%;
+    align-self: center;
+  }
+
+  button {
+    width: 80%;
+    padding: 16px;
+    margin-left: 10%;
+    margin-left: 10%;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right-section-wrapper {
+    height: 60vh;
+    padding: 0 10% 0 10%;
+  }
+
+  .title {
+    font-size: 42px;
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  .description {
+    padding-bottom: 0px;
+  }
+
+  .left-section-wrapper {
+    height: 65vh;
+  }
+
+  .form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    flex-direction: column;
+  }
+
+  input {
+    width: 80%;
+    padding: 16px;
+    margin-left: 10%;
+    margin-left: 10%;
+    align-self: center;
+  }
+
+  button {
+    width: 80%;
+    padding: 16px;
+    margin-left: 10%;
+    margin-left: 10%;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .right-section-wrapper {
+    height: 75vh;
+  }
+
+  .title {
+    padding-top: 20px;
+  }
+}
